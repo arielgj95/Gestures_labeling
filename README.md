@@ -3,7 +3,8 @@
 This repository contains a Jupyter notebook for labeling words in a sentence with
 Symbolic and Deictic gestures. It accompanies the paper
 ["Labeling Sentences with Symbolic and Deictic Gestures via Semantic Similarity"](https://arxiv.org/abs/2407.02151),
-accepted for IEEE RO-MAN 2024.
+published in the 2024 IEEE International Conference on Robot and Human
+Interactive Communication (ROMAN).
 
 The main idea is simple: define a small set of gestures, describe the contexts in
 which each gesture should appear, and compare those descriptions with short word
@@ -16,7 +17,7 @@ gesture reference sentence, the words in that window receive the gesture label.
 | --- | --- |
 | `label_gestures.ipynb` | Main notebook with gesture definitions, semantic-similarity scoring, labeling algorithms, GUI-assisted human labeling utilities, and evaluation code. |
 | `requirements.txt` | Python dependencies used by the notebook. |
-| `CITATION.bib` | BibTeX entry for citing the related IEEE RO-MAN paper. |
+| `assets/` | Images from the published paper, including the method overview, algorithm examples, gesture set, GUI, and robot examples. |
 
 Generated data files are intentionally not stored in this repository. The notebook
 expects local pickle files for generated sentences, human labels, intermediate
@@ -44,6 +45,21 @@ The notebook also contains a Tkinter GUI used to collect human labels. That GUI 
 useful for recreating the annotation process but is separate from the automatic
 labeling algorithms.
 
+## Paper Figures
+
+The repository includes the main visual material from the paper for quick
+reference:
+
+![Method overview](assets/diagram.png)
+
+| Gesture set | Human-labeling GUI |
+| --- | --- |
+| ![Gesture set](assets/gestures.png) | ![Human-labeling GUI](assets/GUI.png) |
+
+The algorithm-example figures are also available in `assets/baseline.png`,
+`assets/fixed_window.png`, and `assets/moving_window.png`. The paper result
+tables are available in `assets/results_table.png` and `assets/gt_table.png`.
+
 ## Setup
 
 Use Python 3.8 or newer. A virtual environment is recommended:
@@ -69,19 +85,24 @@ precomputed similarities, best-window estimates, and prediction outputs. The cod
 uses `path = ""` in many cells, which means those files are expected in the current
 working directory unless you change `path`.
 
-Do not commit private data or local outputs. Files such as `*.pkl`, `*.hkl`,
-notebook checkpoints, and output folders are ignored by `.gitignore`.
+Do not commit private data, local outputs, or the provided arXiv source tarball.
+In this workspace, those local artifacts are excluded with Git's local exclude
+file so the final repository does not include a `.gitignore` file.
 
 Security note: pickle files can execute code when loaded. Only load pickle files
 that you created yourself or fully trust.
 
 ## Alignment With The Paper
 
-This repository is aligned with the public arXiv version of the paper:
+This repository is aligned with the published IEEE ROMAN paper and its public
+arXiv version:
 
 - paper: Ariel Gjaci, Carmine Tommaso Recchiuto, and Antonio Sgorbissa,
   "Labeling Sentences with Symbolic and Deictic Gestures via Semantic Similarity";
-- venue: IEEE RO-MAN 2024;
+- venue: 2024 33rd IEEE International Conference on Robot and Human Interactive
+  Communication (ROMAN);
+- pages: 477-484;
+- DOI: <https://doi.org/10.1109/RO-MAN60168.2024.10731402>;
 - arXiv: <https://arxiv.org/abs/2407.02151>;
 - official conference site: <https://www.ro-man2024.org/>;
 - implemented labels: 11 Symbolic gestures and 1 Deictic pointing gesture;
@@ -100,12 +121,15 @@ used in the reported results.
 If you use this notebook or build on the accompanying method, please cite:
 
 ```bibtex
-@inproceedings{gjaci2024labeling,
-  author = {Gjaci, Ariel and Recchiuto, Carmine Tommaso and Sgorbissa, Antonio},
-  title = {Labeling Sentences with Symbolic and Deictic Gestures via Semantic Similarity},
-  booktitle = {2024 33rd IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)},
-  year = {2024},
-  note = {Accepted for publication; arXiv:2407.02151},
-  url = {https://arxiv.org/abs/2407.02151}
+@INPROCEEDINGS{10731402,
+  author={Gjaci, Ariel and Recchiuto, Carmine Tommaso and Sgorbissa, Antonio},
+  booktitle={2024 33rd IEEE International Conference on Robot and Human Interactive Communication (ROMAN)},
+  title={Labeling Sentences with Symbolic and Deictic Gestures via Semantic Similarity},
+  year={2024},
+  volume={},
+  number={},
+  pages={477-484},
+  keywords={Measurement;Scalability;Semantics;Training data;Humanoid robots;Parallel processing;Real-time systems;Hybrid power systems;Labeling;Graphical user interfaces},
+  doi={10.1109/RO-MAN60168.2024.10731402}
 }
 ```
