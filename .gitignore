@@ -1,0 +1,28 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Jupyter state
+.ipynb_checkpoints/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Generated experiment data and private labels
+*.pkl
+*.pickle
+*.hkl
+*.hickle
+data/
+datasets/
+output/
+outputs/
+results/
+
+# Model checkpoints and local caches
+*.pt
+*.pth
+*.ckpt
+.cache/

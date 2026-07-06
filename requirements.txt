@@ -1,0 +1,10 @@
+hickle
+jupyterlab
+matplotlib
+numpy
+pandas
+scikit-learn
+scipy
+sentence-transformers
+torch
+tqdm
